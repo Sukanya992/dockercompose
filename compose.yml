@@ -1,13 +1,16 @@
-version:'3.8'
+version: '3.8'
 
 services:
-
   mysql:
-    image:mysql:latest
-    container_name:mysql_container
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: mysql
+    image: mysql:latest
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  
+    ports:
+      - "3306:3306" 
 
   nginx:
-    image:nginx:latest
-    container_name:nginx_container
+    image: nginx:latest
+    container_name: nginx_container
+    ports:
+      - "80:80"  
